@@ -140,6 +140,25 @@
 </div>
 
 <script>
+  const allowedStudents = [
+  { phone: "0912345678", password: "pass123" },
+  { phone: "0923456789", password: "mypassword" }
+];
+
+function login() {
+  const phone = document.getElementById("phone").value;
+  const password = document.getElementById("password").value;
+
+  const valid = allowedStudents.some(
+    student => student.phone === phone && student.password === password
+  );
+
+  if (valid) {
+    startExam(); // show the exam
+  } else {
+    alert("❌ Invalid phone number or password!");
+  }
+}
 function showHome() {
   document.getElementById('homePage').style.display = 'block';
   document.getElementById('examPage').style.display = 'none';
@@ -169,4 +188,5 @@ function submitExam() {
 
 </body>
 </html>
+
 
