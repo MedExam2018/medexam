@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>MedExam | Metabolism Exam</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { font-family: Arial, sans-serif; background: #f5f7fb; margin: 0; padding: 0; }
+    body { <div class="container" id="homePage">
+  <h2>Login to MedExam</h2>
+  <p>Enter your Ethiopian phone number and password:</p>
+  <input type="text" id="phone" placeholder="Phone number (091XXXXXXX)"><br><br>
+  <input type="password" id="password" placeholder="Password"><br><br>
+  <button onclick="login()">Login</button>
+</div> }
     header { background: #4f46e5; color: white; padding: 20px; text-align: center; }
     nav { background: #3730a3; padding: 10px; display: flex; justify-content: center; }
     nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
@@ -164,3 +169,4 @@ function submitExam() {
 
 </body>
 </html>
+
