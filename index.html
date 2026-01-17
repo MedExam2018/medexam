@@ -32,20 +32,20 @@
   <a href="#" onclick="showExam()">Exam</a>
 </nav>
 
-<!-- Login / Home Page -->
+<!-- Home Page -->
 <div class="container" id="homePage">
-  <h2>Login to MedExam</h2>
-  <p>Enter your Ethiopian phone number and password:</p>
-  <input type="text" id="phone" placeholder="Phone number (091XXXXXXX)"><br><br>
-  <input type="password" id="password" placeholder="Password"><br><br>
-  <button onclick="login()">Login</button>
+  <h2>Welcome to MedExam</h2>
+  <p>Click below to start the Metabolism exam:</p>
+  <button onclick="startExam()">Start Exam</button>
 </div>
 
 <!-- Exam Page -->
 <div class="container" id="examPage">
   <h2>Metabolism – HMP Pathway Exam</h2>
   <form id="examForm">
-    <!-- Example Questions -->
+
+    <!-- Questions 1–50 -->
+    <!-- Example format for all questions -->
     <div class="question">
       <p>1. In which part of the cell does the HMP pathway occur?</p>
       <label><input type="radio" name="q1" value="0"> Mitochondrial matrix</label><br>
@@ -62,15 +62,8 @@
       <label><input type="radio" name="q2" value="0"> Ribose 5-phosphate</label>
     </div>
 
-    <div class="question">
-      <p>3. The HMP pathway is divided into which two distinct phases?</p>
-      <label><input type="radio" name="q3" value="0"> Aerobic and Anaerobic</label><br>
-      <label><input type="radio" name="q3" value="1"> Irreversible oxidative and reversible nonoxidative</label><br>
-      <label><input type="radio" name="q3" value="0"> Oxidative and Reductive</label><br>
-      <label><input type="radio" name="q3" value="0"> Preparative and Energy-generating</label>
-    </div>
-
-    <!-- Add all remaining questions 4–30 in the same pattern -->
+    <!-- Continue questions 3–50 in the same pattern -->
+    <!-- You can copy all 50 MCQs here -->
 
     <button type="button" onclick="submitExam()">Submit Exam</button>
   </form>
@@ -83,52 +76,37 @@
 </div>
 
 <script>
-  // Allowed students list
-  const allowedStudents = [
-    { phone: "0912345678", password: "pass123" },
-    { phone: "0923456789", password: "mypassword" }
-  ];
+  // 🔹 Exam ON/OFF switch
+  let examOpen = true; // true = exam visible, false = exam closed
 
-  // Login function
-  function login() {
-    const phone = document.getElementById("phone").value;
-    const password = document.getElementById("password").value;
-
-    const valid = allowedStudents.some(
-      student => student.phone === phone && student.password === password
-    );
-
-    if (valid) {
-      startExam(); // Show exam
-    } else {
-      alert("❌ Invalid phone number or password!");
-    }
-  }
-
-  // Show home/login page
+  // Show Home page
   function showHome() {
     document.getElementById('homePage').style.display = 'block';
     document.getElementById('examPage').style.display = 'none';
   }
 
-  // Show exam page (if needed)
+  // Show Exam page
   function showExam() {
     document.getElementById('homePage').style.display = 'none';
     document.getElementById('examPage').style.display = 'block';
   }
 
-  // Start exam
+  // Start Exam
   function startExam() {
+    if (!examOpen) {
+      alert("❌ The exam is currently closed. Please try later.");
+      return;
+    }
     document.getElementById('examPage').style.display = 'block';
     document.getElementById('homePage').style.display = 'none';
     document.getElementById('examForm').style.display = 'block';
     document.getElementById('result').style.display = 'none';
   }
 
-  // Submit exam
+  // Submit Exam
   function submitExam() {
     let score = 0;
-    const total = 3; // Update to 30 when all questions are added
+    const total = 50; // update when all 50 questions are added
     for (let i = 1; i <= total; i++) {
       const q = document.querySelector('input[name="q'+i+'"]:checked');
       if (q) score += parseInt(q.value);
@@ -141,4 +119,3 @@
 
 </body>
 </html>
-
