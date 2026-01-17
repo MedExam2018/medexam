@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MedExam | Metabolism Exam</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial, sans-serif; background: #f5f7fb; margin: 0; padding: 0; }
+    header { background: #4f46e5; color: white; padding: 20px; text-align: center; }
+    nav { background: #3730a3; padding: 10px; display: flex; justify-content: center; }
+    nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    .container { max-width: 900px; margin: 20px auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    h1, h2 { color: #2c3e50; text-align: center; }
+    .question { margin-bottom: 15px; }
+    .question p { font-weight: bold; }
+    button { background: #4f46e5; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; font-size: 16px; }
+    button:hover { background: #3730a3; }
+    #examPage { display: none; }
+    #result { display: none; text-align: center; margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>📘 MedExam | Metabolism Exam</h1>
+</header>
+
+<nav>
+  <a href="#" onclick="showHome()">Home</a>
+  <a href="#" onclick="showExam()">Exam</a>
+</nav>
+
+<div class="container" id="homePage">
+  <h2>Welcome to MedExam</h2>
+  <p>Click below to start the Metabolism exam:</p>
+  <button onclick="startExam()">Start Exam</button>
+</div>
+
+<div class="container" id="examPage">
+  <h2>Metabolism – HMP Pathway Exam</h2>
+  <form id="examForm">
+  
+    <!-- Questions 1–30 -->
+    <div class="question">
+      <p>1. In which part of the cell does the HMP pathway occur?</p>
+      <label><input type="radio" name="q1" value="0"> Mitochondrial matrix</label><br>
+      <label><input type="radio" name="q1" value="1"> Cytosol</label><br>
+      <label><input type="radio" name="q1" value="0"> Endoplasmic reticulum</label><br>
+      <label><input type="radio" name="q1" value="0"> Lysosome</label>
+    </div>
+
+    <div class="question">
+      <p>2. What is the primary starting substrate for the HMP pathway?</p>
+      <label><input type="radio" name="q2" value="0"> Fructose 6-phosphate</label><br>
+      <label><input type="radio" name="q2" value="1"> Glucose 6-phosphate</label><br>
+      <label><input type="radio" name="q2" value="0"> Pyruvate</label><br>
+      <label><input type="radio" name="q2" value="0"> Ribose 5-phosphate</label>
+    </div>
+
+    <div class="question">
+      <p>3. The HMP pathway is divided into which two distinct phases?</p>
+      <label><input type="radio" name="q3" value="0"> Aerobic and Anaerobic</label><br>
+      <label><input type="radio" name="q3" value="1"> Irreversible oxidative and reversible nonoxidative</label><br>
+      <label><input type="radio" name="q3" value="0"> Oxidative and Reductive</label><br>
+      <label><input type="radio" name="q3" value="0"> Preparative and Energy-generating</label>
+    </div>
+
+    <div class="question">
+      <p>4. What is the steady-state ratio of NADP+/NADPH in the cytosol of hepatocytes?</p>
+      <label><input type="radio" name="q4" value="0"> 1000</label><br>
+      <label><input type="radio" name="q4" value="0"> 100</label><br>
+      <label><input type="radio" name="q4" value="0"> 1.0</label><br>
+      <label><input type="radio" name="q4" value="1"> 0.1</label>
+    </div>
+
+    <div class="question">
+      <p>5. Which of the following is NOT produced by the HMP pathway?</p>
+      <label><input type="radio" name="q5" value="0"> NADPH</label><br>
+      <label><input type="radio" name="q5" value="0"> Ribose 5-phosphate</label><br>
+      <label><input type="radio" name="q5" value="1"> ATP</label><br>
+      <label><input type="radio" name="q5" value="0"> CO2</label>
+    </div>
+
+    <div class="question">
+      <p>6. Which enzyme catalyzes the rate-limiting step of the HMP pathway?</p>
+      <label><input type="radio" name="q6" value="0"> Transketolase</label><br>
+      <label><input type="radio" name="q6" value="1"> Glucose 6-phosphate dehydrogenase (G6PD)</label><br>
+      <label><input type="radio" name="q6" value="0"> 6-phosphogluconate dehydrogenase</label><br>
+      <label><input type="radio" name="q6" value="0"> Phosphopentose epimerase</label>
+    </div>
+
+    <div class="question">
+      <p>7. What is the primary coenzyme requirement for the G6PD reaction?</p>
+      <label><input type="radio" name="q7" value="0"> NAD+</label><br>
+      <label><input type="radio" name="q7" value="1"> NADP+</label><br>
+      <label><input type="radio" name="q7" value="0"> FAD</label><br>
+      <label><input type="radio" name="q7" value="0"> Thiamine pyrophosphate</label>
+    </div>
+
+    <div class="question">
+      <p>8. The oxidative phase of the HMP pathway is characterized as being:</p>
+      <label><input type="radio" name="q8" value="0"> Freely reversible</label><br>
+      <label><input type="radio" name="q8" value="1"> Irreversible</label><br>
+      <label><input type="radio" name="q8" value="0"> ATP-dependent</label><br>
+      <label><input type="radio" name="q8" value="0"> Specific to the mitochondria</label>
+    </div>
+
+    <div class="question">
+      <p>9. Which of the following is a potent competitive inhibitor of G6PD?</p>
+      <label><input type="radio" name="q9" value="0"> Glucose 6-phosphate</label><br>
+      <label><input type="radio" name="q9" value="1"> NADPH</label><br>
+      <label><input type="radio" name="q9" value="0"> ATP</label><br>
+      <label><input type="radio" name="q9" value="0"> Ribose 5-phosphate</label>
+    </div>
+
+    <div class="question">
+      <p>10. The reaction catalyzed by 6-phosphogluconolactone hydrolase produces:</p>
+      <label><input type="radio" name="q10" value="0"> Ribulose 5-phosphate</label><br>
+      <label><input type="radio" name="q10" value="1"> 6-phosphogluconate</label><br>
+      <label><input type="radio" name="q10" value="0"> NADPH</label><br>
+      <label><input type="radio" name="q10" value="0"> Xylulose 5-phosphate</label>
+    </div>
+
+    <!-- Questions 11–30 go here; can continue in same pattern -->
+
+    <button type="button" onclick="submitExam()">Submit Exam</button>
+  </form>
+
+  <div id="result">
+    <h2>🎉 Exam Completed!</h2>
+    <p id="score"></p>
+    <p>Thank you for attending the Metabolism Exam.</p>
+  </div>
+</div>
+
+<script>
+function showHome() {
+  document.getElementById('homePage').style.display = 'block';
+  document.getElementById('examPage').style.display = 'none';
+}
+function showExam() {
+  document.getElementById('homePage').style.display = 'none';
+  document.getElementById('examPage').style.display = 'block';
+}
+function startExam() {
+  document.getElementById('examPage').style.display = 'block';
+  document.getElementById('homePage').style.display = 'none';
+  document.getElementById('examForm').style.display = 'block';
+  document.getElementById('result').style.display = 'none';
+}
+function submitExam() {
+  let score = 0;
+  const total = 10; // Update to 30 after adding all questions
+  for (let i = 1; i <= total; i++) {
+    const q = document.querySelector('input[name="q'+i+'"]:checked');
+    if (q) score += parseInt(q.value);
+  }
+  document.getElementById('examForm').style.display = 'none';
+  document.getElementById('result').style.display = 'block';
+  document.getElementById('score').innerText = `Your Score: ${score} / ${total}`;
+}
+</script>
+
+</body>
+</html>
